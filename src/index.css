@@ -1,13 +1,87 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --timer-background-color: #FFFFFF;
+  --timer-height: 70%;
+  --timer-width: 70%;
+  --button-border: 3px solid #4f4cd0;
+  --button-text-size: 2em;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body,
+div,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  color: #4f4cd0
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --timer-height: 100%;
+    --timer-width: 100%;
+    --button-text-size: 4em;
+  }
+}
+@media screen and (max-width: 400px) {
+  :root {
+    --timer-height: 100%;
+    --timer-width: 100%;
+    --button-text-size: 1.5em; 
+  }
+  .timer-button-container {
+    height: 20% !important
+  }
+  .button-container {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.app-container {
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.timer-container {
+  background-color: var(--timer-background-color);
+  border: var(--timer-border);
+  height: var(--timer-height);
+  width: var(--timer-width);
+}
+
+.time-display {
+  height: 70%;
+  font-size: 5em;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timer-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+}
+
+.button-container {
+  flex: 1 1 auto;
+  text-align: center;
+  margin: 0px 20px;
+  border: var(--button-border);
+  font-size: var(--button-text-size);
+}
+
+.button-container:hover {
+  cursor: pointer;
 }
